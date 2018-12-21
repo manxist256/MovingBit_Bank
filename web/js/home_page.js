@@ -72,5 +72,30 @@ function updateValidatedMessage() {
         setTimeout(validatemobileNumber, 1000); 
     } 
 }
+function validateform() {
+    var result = true;
+    var name = document.getElementById("full_name").value;
+    if (!(name !== "")) {
+        result = false;
+        alert("name cannot be empty");
+    }
+    var password = document.getElementById("pass_word").value;
+    if (!(password !== "")) {
+        result = false;
+        alert("password cannot be empty");
+    }
+    var ph = document.getElementById("phone_number").value;
+    if (!(ph !== "")) {
+        result = false;
+        alert("mobile number cannot be empty");
+    }
+    var g1c = document.getElementById("gm").checked;
+    var g2c = document.getElementById("gf").checked;
+    if (!(g1c || g2c)) {
+        result = false;
+        alert("select gender");
+    }
+    return result;
+}
 
 

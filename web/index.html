@@ -71,7 +71,7 @@ and open the template in the editor.
                     <legend>
                         <b>Create an Account</b>
                     </legend>
-                    <form method="post" action="AccountCreate">
+                    <form method="post" action="AccountCreate" onsubmit="return validateform()">
                         <section class="account_input"><span id="fn"><label for="full_name">Full Name :</label> </span> <input type="text" name="fullname" id="full_name" placeholder="full name" class="txtbox_ca" maxlength="20"></section>
                         <section class="account_input"><span id="pd"><label for="pass_word">Password : </label></span><input type="password" name="pwd" id="pass_word" placeholder="password" class="txtbox_ca" maxlength="20"><section>
                         <section class="account_input"><span id="mblnum"><label for="phone_number">Mobile number :</label> </span> <input type="number" id="phone_number" name="ph_num" placeholder="mobile number" class="txtbox_ca" maxlength="20" onkeyup="validatemobileNumber()"><section>
@@ -91,7 +91,7 @@ and open the template in the editor.
             <div id="right_section">
                 <fieldset>
                     <legend>
-                        <b>Create an Account</b>
+                        <b>Login</b>
                     </legend>
                 </fieldset>
             </div>
