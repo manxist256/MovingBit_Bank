@@ -35,6 +35,24 @@ public class jdbc {
         return null;
     }
     
+    public static long getBalance(long mobile, String pwd) throws ClassNotFoundException, SQLException {
+        String query = "select * from account_details";
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3310/Bank","kbk","ytkd0CSIK656f2ZL");
+        Statement statement = connection.createStatement();
+        ResultSet resultset = statement.executeQuery(query);
+        while (true) {
+            resultset.next();
+            if (String.valueOf(mobile).equals(resultset.getString(3)) && pwd.equals(resultset.getString(2))) {
+                return Long.valueOf(resultset.getString(5));
+            }
+            if (resultset.isLast()) {
+                break;
+            }
+        }
+        return -1;
+    }
+    
     public static boolean validateLogin(long mobile, String pwd) throws ClassNotFoundException, SQLException {
         String query = "select * from account_details";
         Class.forName("com.mysql.jdbc.Driver");
