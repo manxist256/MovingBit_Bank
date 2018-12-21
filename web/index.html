@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>HDFC Bank, do easy banking</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/homepage.css"/> 
+        <script>
+            var img1 = "source_images/img1.png";
+            var img2 = "source_images/img2.jpg";
+            var img3 = "source_images/img3.jpeg";
+            var flag = 0;
+            function loopImages() {
+                var element = document.getElementById("homepgimg");
+                if (flag === 0) {
+                    element.src = img2;
+                    flag = 1;
+                } else if (flag === 1) {
+                    element.src = img3;
+                    flag = 2;
+                } else if (flag === 2) {
+                    element.src = img1;
+                    flag = 0;
+                }
+            }
+            var t = 0;
+            function callTimer() {
+                document.getElementById("timer").innerHTML = t++;
+            }
+            function changeDate() {
+                document.getElementById("date").innerHTML = Date();
+            }
+            var loopimages = setInterval(loopImages, 2000);
+            var changedate = setInterval(changeDate, 1000);
+            var timer = setInterval(callTimer, 1000);
+            $(document).ready(function() {
+               $("#homepgimg").click(function() {
+                  clearInterval(loopimages); 
+               });
+               $("#timer").click(function() {
+                  $(this).slideUp(3000);
+               });
+            });
+        </script>
+    </head>
+    <body class="body">
+        <div align="center">
+            <header>
+                <h1 id="header">
+                    Welcome to <span id="bankname">HDFC BANK</span>
+                </h1>
+            </header>
+        </div>
+        <div id="timer">
+        </div>
+        <section id="pg_tb_list" align="center">
+            <nav>
+                <div class="pg_tabs">
+                    Home
+                </div>
+                <div class="pg_tabs branches">
+                    Our Branches
+                    <ul class="ul_branches">
+                        <li>
+                            Madurai
+                        </li>
+                        <li>
+                            Chennai
+                        </li>
+                        <li>
+                            Cuddalore
+                        </li>
+                        <li>
+                            Mumbai
+                        </li>
+                        <li>
+                            Puducherry
+                        </li>
+                    </ul>
+                </div>
+                <div class="pg_tabs">
+                    Our Services
+                </div>
+                <div class="pg_tabs">
+                    Contact
+                </div>
+                <div class="pg_tabs cmplt">
+                    <a href="complaint.html" id="complaint">Complaint</a>
+                </div>
+            </nav>
+        </section>
+        <div id="loopimagesection">
+            <img src="source_images/img1.png" id="homepgimg" />
+        </div>
+        <marquee id="pgmrq1">
+            Create an account or login to do HDFC bank transactions
+        </marquee>
+        <section>
+            <div id="left_section">
+                <fieldset>
+                    <legend>
+                        <b>Create an Account</b>
+                    </legend>
+                    <form method="post" action="AccountCreate">
+                        <section class="account_input"><span id="fn"><label for="full_name">Full Name :</label> </span> <input type="text" name="fullname" id="full_name" placeholder="full name" class="txtbox_ca" maxlength="20"></section>
+                        <section class="account_input"><span id="pd"><label for="pass_word">Password : </label></span><input type="password" name="pwd" id="pass_word" placeholder="password" class="txtbox_ca" maxlength="20"><section>
+                                <section class="account_input"><span id="mblnum"><label for="phone_number">Mobile number :</label> </span> <input type="number" id="phone_number" name="ph_num" placeholder="mobile number" class="txtbox_ca" maxlength="20"><section>
+                        <section class="account_input">
+                            <span id="gndr">Gender </span>
+                            <input type="radio" name="gender" id="gm" value="M"> <label for="gm">Male</label>
+                            <input type="radio" name="gender" id="gf" value="F"> <label for="gf"> Female </label>
+                        <section>
+                        <section id="button_ca">
+                            <input type="reset" value="Reset" id="reset_ca" class="ca_buttons">
+                            <input type="submit" value="Create Account" id="submit_ca" class="ca_buttons">
+                        </section>
+                    </form>
+                </fieldset>
+            </div>
+            <div id="right_section">
+                <fieldset>
+                    <legend>
+                        <b>Create an Account</b>
+                    </legend>
+                </fieldset>
+            </div>
+        </section>
+        <footer id="pgfoot">
+            <div align="center">
+                &copy; 1996-2018, HDFCBank.com, Inc. or its affiliates
+                <p id="date"></p>
+            </div>
+        </footer>
+    </body>
+</html>

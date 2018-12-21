@@ -1,0 +1,133 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 20, 2018, 7:49:57 PM
+    Author     : mankank
+*/
+.body {
+    background-image: linear-gradient(to top, green, white);
+}
+#header:first-letter {
+    color: red;
+}
+#bankname {
+    color: white;
+    background-color : blue;
+}
+#homepgimg {
+    height: 300px;
+    width: 1225px;
+    margin: 0px 20px;
+}
+#pgmrq1 {
+    color: white;
+}
+#left_section {
+    float: left;
+}
+#right_section {
+    float: right;
+}
+#pgfoot {
+    clear: both;
+}
+.account_input {
+    margin: 10px 0px;
+}
+#fn {
+    margin-right: 32px;
+}
+#pd {
+    margin-right: 38px;
+}
+#gndr {
+    margin-right: 58px;
+}
+.txtbox_ca {
+    padding: 6px;
+    border-radius: 10px;
+}
+#button_ca {
+    margin-top: 20px;
+}
+#reset_ca {
+    padding: 10px 20px;
+     margin-left: 30px;
+}
+#submit_ca {
+    padding: 10px 20px;
+    margin-left: 25px;
+}
+#reset_ca, #submit_ca {
+    background-color: yellowgreen;
+    border-radius: 20px;
+}
+#reset_ca:hover, #submit_ca:hover {
+    background-color: green;
+}
+.ca_buttons:hover {
+    color: white;
+}
+#timer {
+    float: right;
+    background-color: antiquewhite;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    top: -80px;
+    right: -7px;
+    border-radius: 0px 0px 0px 10px;
+    text-align: center;
+}
+.pg_tabs {
+    display: inline-block;
+    background-color: green;
+    height: 20px;
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    color: white;
+}
+.pg_tabs:hover {
+    background-color: yellowgreen;
+    border-radius: 10px;
+}
+.pg_tabs:active {
+    background-color: red;
+    border-radius: 10px;
+}
+.cmplt:hover {
+    background-color: red;
+}
+#complaint {
+    text-decoration: none;
+    color: white;
+}
+.ul_branches {
+    list-style-type: none;
+}
+.branches {
+    position: relative;
+}
+.ul_branches {
+    display: block;
+    position: absolute;
+    left: -40px;
+    display: none;
+}
+.ul_branches li {
+    height: 40px;
+    width: 170px;
+    background-color: green;
+}
+.ul_branches li:hover {
+    background-color: yellowgreen;
+    border-radius: 5px;
+}
+.branches:hover .ul_branches {
+    display: block;
+}
