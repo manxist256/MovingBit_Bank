@@ -11,7 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <link rel="stylesheet" href="css/homepage.css"/> 
-        <script src="js/homepage.js"></script>
+        <script src="js/home_page.js"></script>
     </head>
     <body class="body">
         <div align="center">
@@ -74,7 +74,8 @@ and open the template in the editor.
                     <form method="post" action="AccountCreate">
                         <section class="account_input"><span id="fn"><label for="full_name">Full Name :</label> </span> <input type="text" name="fullname" id="full_name" placeholder="full name" class="txtbox_ca" maxlength="20"></section>
                         <section class="account_input"><span id="pd"><label for="pass_word">Password : </label></span><input type="password" name="pwd" id="pass_word" placeholder="password" class="txtbox_ca" maxlength="20"><section>
-                                <section class="account_input"><span id="mblnum"><label for="phone_number">Mobile number :</label> </span> <input type="number" id="phone_number" name="ph_num" placeholder="mobile number" class="txtbox_ca" maxlength="20"><section>
+                        <section class="account_input"><span id="mblnum"><label for="phone_number">Mobile number :</label> </span> <input type="number" id="phone_number" name="ph_num" placeholder="mobile number" class="txtbox_ca" maxlength="20" onkeyup="validatemobileNumber()"><section>
+                                <p id="mobilenumbervalidation"> </p>
                         <section class="account_input">
                             <span id="gndr">Gender </span>
                             <input type="radio" name="gender" id="gm" value="M"> <label for="gm">Male</label>

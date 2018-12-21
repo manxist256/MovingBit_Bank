@@ -131,3 +131,9 @@ and open the template in the editor.
 .branches:hover .ul_branches {
     display: block;
 }
+.redText {
+    color: maroon;
+}
+.whiteText {
+    color: white;
+}
