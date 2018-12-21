@@ -16,6 +16,14 @@
         <servlet-name>LogOut</servlet-name>
         <servlet-class>LogOut</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Deposit</servlet-name>
+        <servlet-class>Deposit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Withdraw</servlet-name>
+        <servlet-class>Withdraw</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>LogOut</servlet-name>
         <url-pattern>/LogOut</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Deposit</servlet-name>
+        <url-pattern>/Deposit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Withdraw</servlet-name>
+        <url-pattern>/Withdraw</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

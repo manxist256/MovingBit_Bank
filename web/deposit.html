@@ -11,13 +11,17 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <link rel="stylesheet" href="css/homepage.css"/>
-        <script src="js/transact.js"></script>
+        <script src="js/deposit.js"></script>
     </head>
     <body bgcolor="cyan">
         <div align="center">
             <h1> How much would you like to Deposit? </h1>
-            <input type="text" placeholder="enter amount">
-            <input type="button" value="deposit">
+            <input type="text" placeholder="enter amount" id="deposit_amt">
+            <input type="button" value="deposit" onclick="deposit()">
+            <p id="deposit_result"></p>
+            <br />
+            <br />
+            <a href="transaction_page.html">Click</a> here to go to transaction home page
         </div>
     </body>
 </html>

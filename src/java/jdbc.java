@@ -95,4 +95,28 @@ public class jdbc {
         Statement statement = connection.createStatement();
         statement.executeUpdate(query);
     }
+    
+    public static void deposit(long mobile, long dep_amt) throws ClassNotFoundException, SQLException {
+        String query = "select * from account_details where mobile = " + mobile;
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3310/Bank","kbk","ytkd0CSIK656f2ZL");
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        rs.next();
+        long updated_amount = Long.parseLong(rs.getString(5)) + dep_amt;
+        String update_query = "update account_details set amount = " + updated_amount + " where mobile = " + mobile;
+        statement.executeUpdate(update_query);
+    }
+    
+    public static void withdraw(long mobile, long with_amt) throws ClassNotFoundException, SQLException {
+        String query = "select * from account_details where mobile = " + mobile;
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3310/Bank","kbk","ytkd0CSIK656f2ZL");
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        rs.next();
+        long updated_amount = Long.parseLong(rs.getString(5)) - with_amt;
+        String update_query = "update account_details set amount = " + updated_amount + " where mobile = " + mobile;
+        statement.executeUpdate(update_query);
+    }
 }
