@@ -93,6 +93,14 @@ and open the template in the editor.
                     <legend>
                         <b>Login</b>
                     </legend>
+                    <form method="post" action="Login">
+                        <section class="account_input"><span id="mblnum"><label for="phone_number_lg">Mobile number :</label> </span> <input type="number" id="phone_number_lg" name="ph_num_lg" placeholder="mobile number" class="txtbox_lg" maxlength="20"><section>
+                        <section class="account_input"><span id="pd"><label for="pass_word_lg">Password : </label></span><input type="password" name="pwd_lg" id="pass_word_lg" placeholder="password" class="txtbox_lg" maxlength="20"><section>
+                        <section id="button_lg">
+                            <input type="reset" value="Reset" id="reset_lg" class="lg_buttons">
+                            <input type="submit" value="Login" id="submit_lg" class="lg_buttons">
+                        </section>
+                    </form>
                 </fieldset>
             </div>
         </section>

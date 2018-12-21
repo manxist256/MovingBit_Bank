@@ -16,6 +16,43 @@ import java.sql.Statement;
  * @author mankank
  */
 public class jdbc {
+    
+    public static String getName(long mobile, String pwd) throws ClassNotFoundException, SQLException {
+        String query = "select * from account_details";
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3310/Bank","kbk","ytkd0CSIK656f2ZL");
+        Statement statement = connection.createStatement();
+        ResultSet resultset = statement.executeQuery(query);
+        while (true) {
+            resultset.next();
+            if (String.valueOf(mobile).equals(resultset.getString(3)) && pwd.equals(resultset.getString(2))) {
+                return resultset.getString(1);
+            }
+            if (resultset.isLast()) {
+                break;
+            }
+        }
+        return null;
+    }
+    
+    public static boolean validateLogin(long mobile, String pwd) throws ClassNotFoundException, SQLException {
+        String query = "select * from account_details";
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3310/Bank","kbk","ytkd0CSIK656f2ZL");
+        Statement statement = connection.createStatement();
+        ResultSet resultset = statement.executeQuery(query);
+        while (true) {
+            resultset.next();
+            if (String.valueOf(mobile).equals(resultset.getString(3)) && pwd.equals(resultset.getString(2))) {
+                return true;
+            }
+            if (resultset.isLast()) {
+                break;
+            }
+        }
+        return false;
+    }
+    
     public static boolean validateMobileNumber(long mobile) throws ClassNotFoundException, SQLException {
         String query = "select * from account_details";
         Class.forName("com.mysql.jdbc.Driver");

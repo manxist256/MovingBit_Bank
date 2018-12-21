@@ -46,29 +46,32 @@ and open the template in the editor.
 #gndr {
     margin-right: 58px;
 }
-.txtbox_ca {
+.txtbox_ca, .txtbox_lg {
     padding: 6px;
     border-radius: 10px;
 }
-#button_ca {
+#button_ca, #button_lg {
     margin-top: 20px;
 }
-#reset_ca {
+#button_lg {
+    margin-left: 52px;
+}
+#reset_ca, #reset_lg {
     padding: 10px 20px;
      margin-left: 30px;
 }
-#submit_ca {
+#submit_ca, #submit_lg {
     padding: 10px 20px;
     margin-left: 25px;
 }
-#reset_ca, #submit_ca {
+#reset_ca, #submit_ca, #reset_lg, #submit_lg {
     background-color: yellowgreen;
     border-radius: 20px;
 }
-#reset_ca:hover, #submit_ca:hover {
+#reset_ca:hover, #submit_ca:hover, #reset_lg:hover, #submit_lg:hover {
     background-color: green;
 }
-.ca_buttons:hover {
+.ca_buttons:hover, .lg_buttons:hover {
     color: white;
 }
 #timer {
@@ -139,4 +142,14 @@ and open the template in the editor.
 }
 #accountcreatedheader {
     color: white;
+}
+.name_added {
+    color: red;
+}
+#transation_types_list {
+    list-style-type: none;
+}
+.li_transact {
+    text-decoration: none;
+    color: black;
 }
