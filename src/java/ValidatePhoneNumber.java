@@ -5,6 +5,7 @@
  */
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,18 +18,18 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author mankank
  */
-@WebServlet(urlPatterns = {"/AccountCreate"})
-public class CreateAccount extends HttpServlet {
+@WebServlet(urlPatterns = {"/ValidateMobile"})
+public class ValidatePhoneNumber extends HttpServlet {
     @Override
     public void service(HttpServletRequest request, HttpServletResponse response) throws IOException  {
-        String name = request.getParameter("fullname");
-        String password = request.getParameter("pwd");
-        long mobile = Long.parseLong(request.getParameter("ph_num"));
-        String gender = request.getParameter("gender");
-         try {
-             jdbc.createAccount(name, password, gender, mobile);
-         } catch (ClassNotFoundException | SQLException ex) {
-             Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
-         }
+        /**/
+        long mobile = Long.parseLong(request.getParameter("mobile"));
+        PrintWriter writer = response.getWriter();
+        try {
+            boolean result = jdbc.validateMobileNumber(mobile);
+            writer.print(result);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ValidatePhoneNumber.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
